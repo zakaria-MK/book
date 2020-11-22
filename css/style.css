@@ -1,6 +1,6 @@
 header {
   height: 100vh;
-  background: linear-gradient(rgba(0,0,0, .7), rgba(0, 0, 0, .8)) ,url("../img/library.jpg");
+  background: linear-gradient(rgba(0,0,0, .7), rgba(0, 0, 0, .8)) ,url("../img/library.jpg") fixed no-repeat center/cover;
   clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
 }
 
@@ -32,21 +32,30 @@ header {
   }
 }
 
-.gallery h1 , .writters h1 {
+.gallery h1 , 
+.writters h1 , 
+.suggested h1,
+.popular-books h1 {
   display: inline-block;
   font-weight: 500;
-  font-size: 3rem;
+  font-size: 2.5rem;
   text-shadow: 3px 3px 5px #9b9999;
   transition: all .5s;
 }
 
-.gallery h1::first-letter , .writters h1::first-letter {
+.gallery h1::first-letter , 
+.writters h1::first-letter ,
+.suggested h1::first-letter,
+.popular-books h1::first-letter {
   font-family: 'Great Vibes' , cursive;
   font-size: 5rem;
   margin-right: 15px;
 }
 
-.writters h1:hover, .gallery h1:hover {
+.writters h1:hover, 
+.gallery h1:hover , 
+.suggested h1:hover,
+.popular-books h1:hover{
   transform: translate(-5px , -5px); 
   text-shadow: 5px 5px 10px gray;
 }
@@ -99,3 +108,120 @@ header {
   background: linear-gradient(rgba(255, 249, 249, 0.8) , rgba(255, 253, 253, 0.9) ) ,
               url(../img/writers-bg.jpeg) fixed center /cover;
 }
+
+.suggested {
+  height: 600px;
+  background: url(../img/wood-bg.jpeg) no-repeat  center /cover;
+}
+
+.books {
+  position: relative;
+  height: 30%;
+}
+
+.book {
+  position: absolute;
+  width: 35%;
+  border-right: 5px solid #777;
+  border-bottom: 5px solid #444;
+  box-shadow: 5px 5px 15px #444;
+  transition: all .7s ease-in-out;
+}
+
+.book-1 {
+  top: 10%;
+  right: 55%;
+  transform: rotate(30deg);
+}
+
+.book-2 {
+  top: 10%;
+  right: 10%;
+  transform: rotate(-45deg);
+}
+
+.book-3 {
+  top: 10%;
+  right: 35%;
+  transform: rotate(-15deg);
+}
+
+.book-4 {
+  top: 60%;
+  right: 40%;
+  transform: rotate(15deg);
+}
+
+.book:hover {
+  transform: scale(1.2) rotateX(25deg);
+  z-index: 10;
+  box-shadow: 5px 5px 5px #444;
+  border-bottom: 20px solid #bbb;
+  border-right: 10px solid #ddd;
+}
+
+/* Popular Books */
+.popular-books {
+  position: relative;
+  
+}
+
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: .4;
+}
+
+.bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.book-card {
+  position: relative;
+  max-width: 420px;
+  transition: all .75s;
+  overflow: hidden;
+}
+
+.rotate {
+  perspective: 100rem;
+}
+
+.back {
+  position: absolute;
+  top: -100%;
+  background: #ffffff ;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  user-select: none;
+  pointer-events: none;
+  transform: rotateY(180deg);
+  transition: top .6s , opacity .4s;
+}
+
+.back-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+}
+
+.rotate:hover .book-card{
+  transform: rotateY(180deg);
+}
+
+.rotate:hover .back {
+  pointer-events: auto;
+  user-select: auto;
+  opacity: 1;
+  top: 0;
+}
+
+/* end of Popular Books */
