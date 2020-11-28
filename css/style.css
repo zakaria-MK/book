@@ -32,6 +32,18 @@ header {
   }
 }
 
+@media (max-width: 768px) {
+  .banner-heading {
+    font-size: 5rem;
+  }
+
+  .banner-heading::first-letter {
+    font-family: 'Great Vibes', cursive;
+    font-size: 6rem;
+    margin-right: 10px;
+  }
+}
+
 .gallery h1 , 
 .writters h1 , 
 .suggested h1,
@@ -58,6 +70,19 @@ header {
 .popular-books h1:hover{
   transform: translate(-5px , -5px); 
   text-shadow: 5px 5px 10px gray;
+}
+
+@media (max-width: 768) {
+  .gallery h1 , 
+  .writters h1 , 
+  .suggested h1,
+  .popular-books h1 {
+    display: inline-block;
+    font-weight: 500;
+    font-size: 1.5rem;
+    text-shadow: 3px 3px 5px #9b9999;
+    transition: all .5s;
+  }
 }
 
 .gallery img {
@@ -136,7 +161,7 @@ header {
 
 .book-2 {
   top: 10%;
-  right: 10%;
+  right: 20%;
   transform: rotate(-45deg);
 }
 
@@ -225,3 +250,77 @@ header {
 }
 
 /* end of Popular Books */
+
+/* Contact */
+.contact {
+  background: linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.9)) , 
+              url(../img/library.jpg) fixed  no-repeat center/cover;
+}
+
+.items-wrapper {
+  background: linear-gradient(rgba(0, 0, 0, .5) , rgba(0, 0, 0, .6)) , 
+              url(../img/items-wrapper-bg.jpg) no-repeat center  /cover;
+
+  border-radius: 5px;
+}
+
+.floating-item {
+  background: rgba(0, 0, 0, .5);
+  border-radius: 5px;
+}
+
+.first-item {
+  animation-name: float;
+  animation-duration: 15s;
+  animation-iteration-count: infinite ;
+}
+
+.second-item {
+  animation-name: float;
+  animation-duration: 20s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
+
+.third-item {
+  animation: float 40s linear infinite;
+}
+
+.fourth-item {
+  animation: float 30s infinite;
+}
+
+.fifth-item {
+  animation: float 25s ease-in-out infinite;
+}
+
+
+@keyframes float {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(-60px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  background: transparent;
+  font-size: 18px;
+  color: rgb(56, 56, 56);
+  box-shadow: none;
+  border-radius: 5px;
+}
+
+.contact-form input:focus {
+  background: rgba(255, 249, 249, 0.8);
+  box-shadow: none;
+}
+/* end of Contact */
